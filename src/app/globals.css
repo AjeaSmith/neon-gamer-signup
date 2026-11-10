@@ -1,26 +1,78 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+	--font-main: var(--font-jetbrains-mono);
+	--font-heading: var(--font-orbitron);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	/* APP COLORS */
+	--color-app-neutral-50: hsl(204 60% 97%);
+	--color-app-neutral-100: hsl(208 49% 92%);
+	--color-app-neutral-300: hsl(211 18% 68%);
+	--color-app-neutral-400: hsl(211 13% 55%);
+	--color-app-neutral-500: hsl(211 14% 50%);
+	--color-app-neutral-600: hsl(210 18% 42%);
+	--color-app-neutral-700: hsl(211 22% 24%);
+	--color-app-neutral-800: hsl(211 30% 13%);
+	--color-app-neutral-900: hsl(210 39% 7%);
+	--color-app-neutral-950: hsl(214 37% 4%);
+
+	--color-app-lime-500: hsl(77 90% 59%);
+	--color-app-lime-700: hsl(77 67% 39%);
+	--color-app-lime-alpha40: hsl(77 90% 59% / 0.4);
+	--color-app-lime-alpha60: hsl(77 90% 59% / 0.6);
+
+	--color-app-red: hsl(4 100% 74%);
+	--color-app-amber-400: hsl(40 100% 65%);
+
+	--color-app-navy-950: hsl(214 60% 2%);
+	--color-app-navy-alpha60: hsl(214 60% 2% / 0.6);
+	--color-app-navy-alpha80: hsl(214 60% 2% / 0.8);
+
+	/* TYPOGRAPHY */
+	--text-preset-1: clamp(
+		2.25rem,
+		1.32rem + 3.98vw,
+		4.5rem
+	); /* Fluid: 36px to 72px */
+	--text-preset-2: 1.5rem;
+	--text-preset-3: 1rem;
+	--text-preset-4: 1rem;
+	--text-preset-5: 0.875rem;
+	--text-preset-6: 0.75rem;
+	--text-preset-7: 0.75rem;
+
+	/* Line Heights */
+	--leading-preset-1: clamp(
+		2.5rem,
+		1.68rem + 3.51vw,
+		5rem
+	); /* Fluid: 40px to 80px */
+	--leading-preset-2: 2rem; /* 32px */
+	--leading-preset-3: 1.5rem; /* 24px */
+	--leading-preset-4: 1.5rem; /* 24px */
+	--leading-preset-5: 1.5rem; /* 24px */
+	--leading-preset-6: 1rem; /* 16px */
+	--leading-preset-7: 1rem; /* 16px */
+
+	/* Letter Spacing Tokens */
+	--tracking-preset-wide: 0.04em;
+	--tracking-preset-widest: 0.16em;
+	/* END OF TYPOGRAPHY*/
+
+	/* SHADOWS / DROPSHADOWS */
+	--shadow-panel: 0 24px 64px -16px var(--color-app-navy-alpha80);
+	--inset-shadow-well: 0 2px 4px 0px var(--color-app-navy-alpha60);
+	--shadow-button-hover: 4px 4px 0px 0px var(--color-app-lime-alpha40);
+	--shadow-glow: 0px 0px 16px 0px var(--color-app-lime-alpha60);
+
+	/* END OF SHADOWS / DROPSHADOWS */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	color: var(--color-app-neutral-100);
+	font-family: var(--font-main);
 }
